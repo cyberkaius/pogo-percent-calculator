@@ -172,7 +172,6 @@ input:focus {
         width: 95%;
     }
 
-
     .calculator {
         width: 100%;
         max-width: 540px;
@@ -180,41 +179,35 @@ input:focus {
         box-sizing: border-box;
     }
 
-
     h2 {
         font-size: 26px;
     }
-
 
     h3 {
         font-size: 18px;
     }
 
-
     .stat-row {
-        display: grid;
-        grid-template-columns: 70px 60px 1fr;
-        gap: 8px;
+        display: flex;
         width: 100%;
+        gap: 8px;
     }
-
 
     .stat-row label {
-        width: auto;
-        text-align: right;
+        width: 65px;
+        flex-shrink: 0;
     }
-
 
     input {
         width: 60px;
+        flex-shrink: 0;
     }
-
 
     .bar {
-        width: 100%;
+        flex: 1;
+        width: auto;
         min-width: 0;
     }
-
 
     .guide img {
         max-width: 95vw;
