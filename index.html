@@ -108,12 +108,13 @@
 <div class="container">
 
     <div class="calculator">
-        <h2>Pokemon Go Percentage Calculator</h2>
+        <h2>Percentage Calculator</h2>
+        <h3>Pokemon Go</h3>
 
 
         <div class="stat-row">
-            <input type="number" id="num1" min="0" max="15" value="0" oninput="calculate()" name="Atk">
-
+            <input type="number" id="num1" min="0" max="15" value="0" oninput="calculate()" name="attack">
+            <label for="attack">Attack</label><br>
             <div class="bar">
                 <div class="fill" id="fill1"></div>
                 <div class="line line5"></div>
@@ -124,7 +125,8 @@
 
 
         <div class="stat-row">
-            <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()">
+            <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()" name="defense">
+            <label for="defense">Defense</label><br>
 
             <div class="bar">
                 <div class="fill" id="fill2"></div>
@@ -136,7 +138,8 @@
 
 
         <div class="stat-row">
-            <input type="number" id="num3" min="0" max="15" value="0" oninput="calculate()">
+            <input type="number" id="num3" min="0" max="15" value="0" oninput="calculate()" name="hp">
+            <label for="hp">HP</label><br>
 
             <div class="bar">
                 <div class="fill" id="fill3"></div>
