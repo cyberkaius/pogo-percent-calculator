@@ -28,19 +28,66 @@
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         text-align: center;
-        width: 300px;
+        width: 420px;
     }
 
     h2 {
         margin-top: 0;
     }
 
+    .stat-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
     input {
-        width: 100px;
+        width: 60px;
         padding: 10px;
-        margin: 8px 0;
         font-size: 18px;
         text-align: center;
+    }
+
+    .bar {
+        position: relative;
+        height: 25px;
+        width: 260px;
+        background: #ddd;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .fill {
+        height: 100%;
+        width: 0%;
+        background: #f39a16;
+        transition: width 0.2s;
+    }
+
+    .line {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: white;
+    }
+
+    .line5 {
+        left: 33.33%;
+    }
+
+    .line10 {
+        left: 66.66%;
+    }
+
+    .bar-text {
+        position: absolute;
+        width: 100%;
+        top: 3px;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
     }
 
     #result {
@@ -63,12 +110,46 @@
     <div class="calculator">
         <h2>Pokemon Go Percentage Calculator</h2>
 
-        <input type="number" id="num1" min="0" max="15" value="0" oninput="calculate()"><br>
-        <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()"><br>
-        <input type="number" id="num3" min="0" max="15" value="0" oninput="calculate()"><br>
+
+        <div class="stat-row">
+            <input type="number" id="num1" min="0" max="15" value="0" oninput="calculate()">
+
+            <div class="bar">
+                <div class="fill" id="fill1"></div>
+                <div class="line line5"></div>
+                <div class="line line10"></div>
+                <div class="bar-text" id="barText1">0 / 15</div>
+            </div>
+        </div>
+
+
+        <div class="stat-row">
+            <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()">
+
+            <div class="bar">
+                <div class="fill" id="fill2"></div>
+                <div class="line line5"></div>
+                <div class="line line10"></div>
+                <div class="bar-text" id="barText2">0 / 15</div>
+            </div>
+        </div>
+
+
+        <div class="stat-row">
+            <input type="number" id="num3" min="0" max="15" value="0" oninput="calculate()">
+
+            <div class="bar">
+                <div class="fill" id="fill3"></div>
+                <div class="line line5"></div>
+                <div class="line line10"></div>
+                <div class="bar-text" id="barText3">0 / 15</div>
+            </div>
+        </div>
+
 
         <div id="result"></div>
     </div>
+
 
     <div class="guide">
         <img src="stars.png" alt="Star Rating Guide">
@@ -86,7 +167,8 @@ function calculate() {
         document.getElementById("num3")
     ];
 
-    const values = inputs.map(input => {
+    const values = inputs.map((input, index) => {
+
         let value = Number(input.value);
 
         if (isNaN(value)) value = 0;
@@ -95,6 +177,15 @@ function calculate() {
 
         input.value = value;
 
+
+        document.getElementById("fill" + (index + 1)).style.width =
+            (value / 15 * 100) + "%";
+
+
+        document.getElementById("barText" + (index + 1)).innerHTML =
+            value + " / 15";
+
+
         return value;
     });
 
@@ -102,7 +193,7 @@ function calculate() {
     const sum = values[0] + values[1] + values[2];
     const score = sum / 45;
     const raw = score * 100;
-    const percentage = Math.round(score * 100);
+    const percentage = Math.round(raw);
 
 
     let stars;
