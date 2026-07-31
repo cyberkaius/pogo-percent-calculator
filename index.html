@@ -6,110 +6,160 @@
 <title>PoGo Percentage Calculator</title>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #3b82f6, #1e3a8a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-    .container {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
 
-    .calculator {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        width: 520px;
-    }
+.container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
 
-    h2, h3 {
-        text-align: center;
-        margin: 5px;
-    }
 
-    .stat-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin: 12px 0;
-    }
+.calculator {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    width: 540px;
+}
 
-    .stat-row label {
-        width: 70px;
-        text-align: right;
-        font-weight: bold;
-    }
 
-    input {
-        width: 60px;
-        padding: 10px;
-        font-size: 18px;
-        text-align: center;
-        box-sizing: border-box;
-    }
+h2 {
+    text-align: center;
+    margin: 0;
+    color: #ffcb05;
+    font-size: 32px;
+    text-shadow:
+        2px 2px #3b4cca,
+        -1px -1px #3b4cca;
+}
 
-    .bar {
-        position: relative;
-        height: 25px;
-        width: 260px;
-        background: #ddd;
-        border-radius: 15px;
-        overflow: hidden;
-    }
 
-    .fill {
-        height: 100%;
-        width: 0%;
-        background: #f39a16;
-        transition: width 0.2s;
-    }
+h3 {
+    text-align: center;
+    margin-top: 5px;
+    color: #333;
+}
 
-    .line {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 2px;
-        background: white;
-    }
 
-    .line5 {
-        left: 33.33%;
-    }
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
 
-    .line10 {
-        left: 66.66%;
-    }
 
-    .bar-text {
-        position: absolute;
-        width: 100%;
-        top: 3px;
-        text-align: center;
-        font-weight: bold;
-        color: #333;
-    }
+.stat-row label {
+    width: 75px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+}
 
-    #result {
-        margin-top: 25px;
-        text-align: center;
-        font-size: 18px;
-        line-height: 1.8;
-    }
 
-    .guide img {
-        max-width: 650px;
-        border-radius: 8px;
-    }
+input {
+    width: 60px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #3b4cca;
+    background: #f8fafc;
+}
+
+
+input:focus {
+    outline: none;
+    border-color: #ffcb05;
+    box-shadow: 0 0 8px #ffcb05;
+}
+
+
+.bar {
+    position: relative;
+    height: 28px;
+    width: 260px;
+    background: #ddd;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        #ffcb05,
+        #f39a16
+    );
+    transition: width 0.2s;
+}
+
+
+.line {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: white;
+}
+
+
+.line5 {
+    left: 33.33%;
+}
+
+
+.line10 {
+    left: 66.66%;
+}
+
+
+.bar-text {
+    position: absolute;
+    width: 100%;
+    top: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: #222;
+}
+
+
+#result {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.8;
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 15px;
+    border: 3px solid #3b4cca;
+}
+
+
+.guide img {
+    max-width: 650px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
 </style>
 </head>
+
 
 <body>
 
@@ -134,6 +184,7 @@
 </div>
 
 
+
 <div class="stat-row">
     <label for="num2">Defense</label>
     <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()">
@@ -145,6 +196,7 @@
         <div class="bar-text" id="barText2">0 / 15</div>
     </div>
 </div>
+
 
 
 <div class="stat-row">
@@ -160,6 +212,7 @@
 </div>
 
 
+
 <div id="result"></div>
 
 </div>
@@ -169,10 +222,13 @@
     <img src="stars.png" alt="Star Rating Guide">
 </div>
 
+
 </div>
 
 
+
 <script>
+
 function calculate() {
 
     const inputs = [
@@ -202,32 +258,39 @@ function calculate() {
 
 
         return value;
+
     });
 
 
     const sum = values[0] + values[1] + values[2];
+
     const score = sum / 45;
+
     const raw = score * 100;
+
     const percentage = Math.round(raw);
+
 
 
     let stars;
 
+
     if (raw <= 48.9) {
-        stars = "☆☆☆☆";
-    } 
+        stars = "⬛";
+    }
     else if (raw <= 64.4) {
-        stars = "⭐☆☆☆";
-    } 
+        stars = "⭐";
+    }
     else if (raw <= 80) {
-        stars = "⭐⭐☆☆";
-    } 
+        stars = "⭐⭐";
+    }
     else if (raw <= 97.8) {
-        stars = "⭐⭐⭐☆";
-    } 
+        stars = "⭐⭐⭐";
+    }
     else {
         stars = "⭐⭐⭐⭐";
     }
+
 
 
     document.getElementById("result").innerHTML = `
@@ -236,11 +299,14 @@ function calculate() {
         <strong>Percentage:</strong> ${percentage}%<br>
         <strong>Rating:</strong> ${stars}
     `;
+
 }
+
 
 calculate();
 
 </script>
+
 
 </body>
 </html>
