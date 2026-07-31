@@ -442,67 +442,12 @@ function calculate(){
 
     const sum = values[0] + values[1] + values[2];
 
-
-    const score = sum / 45;
-
-
     const raw = score * 100;
-
 
     const percentage = Math.round(raw);
 
-
-
-
-
-    let stars;
-
-
-
-    if(raw <= 48.9){
-
-        stars = "✩✩✩✩";
-
-    }
-
-    else if(raw <= 64.4){
-
-        stars = "⭐✩✩✩";
-
-    }
-
-    else if(raw <= 80){
-
-        stars = "⭐⭐✩✩";
-
-    }
-
-    else if(raw <= 97.8){
-
-        stars = "⭐⭐⭐✩";
-
-    }
-
-    else{
-
-        stars = "🌟🌟🌟🌟";
-
-    }
-
-
-
-
-
     document.getElementById("result").innerHTML = `
-
-    <strong>Sum:</strong> ${sum}<br>
-
-    <strong>Score:</strong> ${score}<br>
-
-    <strong>Percentage:</strong> ${percentage}%<br>
-
-    <strong>Rating:</strong> ${stars}
-
+    <h1>${percentage}%<h1>
     `;
 
 
