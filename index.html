@@ -17,94 +17,113 @@ body {
     margin: 0;
 }
 
+
 .container {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
+
 .calculator {
     background: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     width: 560px;
 }
 
+
 h2 {
-    text-align:center;
-    margin:0;
-    color:#ffcb05;
-    font-size:32px;
-    text-shadow:2px 2px #3b4cca;
+    text-align: center;
+    margin: 0;
+    color: #ffcb05;
+    font-size: 32px;
+    text-shadow:
+        2px 2px #3b4cca;
 }
+
 
 h3 {
-    text-align:center;
-    color:#333;
+    text-align: center;
+    color: #333;
 }
+
 
 .stat-row {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
 }
+
 
 .stat-row label {
-    width:75px;
-    text-align:right;
-    font-weight:bold;
+    width: 75px;
+    text-align: right;
+    font-weight: bold;
 }
+
 
 .stat-input {
-    width:55px;
-    padding:8px;
-    font-size:18px;
-    text-align:center;
-    border-radius:10px;
-    border:3px solid #3b4cca;
+    width: 55px;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #3b4cca;
 }
+
 
 .stat-input:focus {
-    outline:none;
-    border-color:#ffcb05;
-    box-shadow:0 0 8px #ffcb05;
+    outline: none;
+    border-color: #ffcb05;
+    box-shadow: 0 0 8px #ffcb05;
 }
+
 
 .bar {
-    position:relative;
-    flex:1;
-    height:28px;
-    background:#ddd;
-    border-radius:20px;
-    overflow:hidden;
-    cursor:pointer;
-    border:2px solid #999;
+
+    position: relative;
+    flex: 1;
+    height: 32px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+
 }
 
+
 .fill {
-    position:absolute;
-    left:0;
-    top:0;
-    height:100%;
-    width:0%;
-    background:linear-gradient(
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+
+    background: linear-gradient(
         90deg,
         #ffcb05,
         #f39a16
     );
-    transition:width .35s ease;
-    z-index:1;
+
+    transition: width 0.35s ease;
+    z-index: 1;
+
 }
 
+
 .bar-lines {
-    position:absolute;
-    inset:0;
-    z-index:3;
-    pointer-events:none;
+
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
 
     background:
+
     repeating-linear-gradient(
         to right,
         transparent,
@@ -112,122 +131,200 @@ h3 {
         #999 calc(6.666% - 1px),
         #999 6.666%
     );
+
 }
+
 
 .marker {
-    position:absolute;
-    top:0;
-    height:100%;
-    width:4px;
-    background:white;
-    z-index:4;
-    pointer-events:none;
+
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: white;
+    z-index: 4;
+    pointer-events: none;
+
 }
+
 
 .marker5 {
-    left:33.333%;
+    left: 33.333%;
 }
+
 
 .marker10 {
-    left:66.666%;
+    left: 66.666%;
 }
+
 
 #result {
-    margin-top:25px;
-    text-align:center;
-    font-size:19px;
-    line-height:1.8;
-    background:#f1f5f9;
-    padding:15px;
-    border-radius:15px;
-    border:3px solid #3b4cca;
+
+    margin-top: 25px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.8;
+
+    background: #f1f5f9;
+    padding: 15px;
+
+    border-radius: 15px;
+    border: 3px solid #3b4cca;
+
 }
 
+
 .guide img {
-    max-width:650px;
-    border-radius:15px;
+
+    max-width: 650px;
+    border-radius: 15px;
+
 }
+
 
 @media(max-width:800px){
 
-    .container {
-        flex-direction:column;
-        width:95%;
+
+    body {
+        padding: 20px 0;
     }
+
+
+    .container {
+
+        flex-direction: column;
+        width: 95%;
+        gap: 20px;
+
+    }
+
 
     .calculator {
-        width:100%;
-        box-sizing:border-box;
-        padding:20px;
+
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+
     }
+
+
+    .stat-row {
+
+        gap: 6px;
+
+    }
+
+
+    .stat-row label {
+
+        width: 55px;
+        font-size: 14px;
+
+    }
+
+
+    .stat-input {
+
+        width: 42px;
+        padding: 5px;
+        font-size: 16px;
+
+    }
+
 
     .bar {
-        min-width:0;
+
+        height: 38px;
+
     }
 
+
     .guide img {
-        max-width:95vw;
+
+        max-width: 95vw;
+
     }
+
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
+
 <div class="container">
 
+
 <div class="calculator">
+
 
 <h2>Pokemon Go</h2>
 <h3>Percentage Calculator</h3>
 
 
 <div class="stat-row">
+
 <label>Attack</label>
 
 <div class="bar" id="bar1">
+
 <div class="fill" id="fill1"></div>
+
 <div class="bar-lines"></div>
+
 <div class="marker marker5"></div>
+
 <div class="marker marker10"></div>
+
 </div>
 
 <input class="stat-input" id="num1" type="number" min="0" max="15" value="0">
+
 </div>
 
 
-
 <div class="stat-row">
+
 <label>Defense</label>
 
 <div class="bar" id="bar2">
+
 <div class="fill" id="fill2"></div>
+
 <div class="bar-lines"></div>
+
 <div class="marker marker5"></div>
+
 <div class="marker marker10"></div>
+
 </div>
 
 <input class="stat-input" id="num2" type="number" min="0" max="15" value="0">
-</div>
 
+</div>
 
 
 <div class="stat-row">
+
 <label>HP</label>
 
 <div class="bar" id="bar3">
+
 <div class="fill" id="fill3"></div>
+
 <div class="bar-lines"></div>
+
 <div class="marker marker5"></div>
+
 <div class="marker marker10"></div>
+
 </div>
 
 <input class="stat-input" id="num3" type="number" min="0" max="15" value="0">
+
 </div>
-
-
 
 <div id="result"></div>
 
@@ -235,7 +332,7 @@ h3 {
 
 
 <div class="guide">
-<img src="stars.png" alt="Star Rating Guide">
+    <img src="stars.png" alt="Star Rating Guide">
 </div>
 
 
@@ -249,29 +346,35 @@ function setupBars(){
 
     for(let i = 1; i <= 3; i++){
 
-        const bar = document.getElementById("bar"+i);
+        const bar = document.getElementById("bar" + i);
+
 
         bar.addEventListener("click", function(event){
 
+
             const rect = bar.getBoundingClientRect();
+
 
             const mouseX = event.clientX - rect.left;
 
+
             const segmentWidth = rect.width / 15;
 
-            let value = Math.floor(mouseX / segmentWidth) + 1;
 
-            if(mouseX <= 0){
-                value = 0;
-            }
+            let value = Math.ceil(mouseX / segmentWidth);
 
-            value = Math.max(0, Math.min(15,value));
 
-            document.getElementById("num"+i).value = value;
+            value = Math.max(0, Math.min(15, value));
+
+
+            document.getElementById("num" + i).value = value;
+
 
             calculate();
 
+
         });
+
 
     }
 
@@ -279,86 +382,144 @@ function setupBars(){
 
 
 
+
 function calculate(){
 
+
     const inputs = [
+
         document.getElementById("num1"),
         document.getElementById("num2"),
         document.getElementById("num3")
+
     ];
+
 
 
     const values = inputs.map((input,index)=>{
 
+
         let value = Number(input.value);
 
+
+
         if(isNaN(value)){
+
             value = 0;
+
         }
 
-        value = Math.max(0,Math.min(15,value));
+
+
+        value = Math.max(0, Math.min(15,value));
+
+
 
         input.value = value;
 
 
-        document.getElementById("fill"+(index+1)).style.width =
+
+        document.getElementById("fill" + (index + 1)).style.width =
+
             (value / 15 * 100) + "%";
 
 
+
         return value;
+
 
     });
 
 
 
+
+
     const sum = values[0] + values[1] + values[2];
+
 
     const score = sum / 45;
 
+
     const raw = score * 100;
 
+
     const percentage = Math.round(raw);
+
+
 
 
 
     let stars;
 
 
+
     if(raw <= 48.9){
-        stars="✩";
+
+        stars = "⬛";
+
     }
+
     else if(raw <= 64.4){
-        stars="⭐✩✩✩";
+
+        stars = "⭐";
+
     }
+
     else if(raw <= 80){
-        stars="⭐⭐✩✩";
+
+        stars = "⭐⭐";
+
     }
+
     else if(raw <= 97.8){
-        stars="⭐⭐⭐✩";
+
+        stars = "⭐⭐⭐";
+
     }
+
     else{
-        stars="🌟🌟🌟🌟";
+
+        stars = "⭐⭐⭐⭐";
+
     }
+
+
 
 
 
     document.getElementById("result").innerHTML = `
+
     <strong>Sum:</strong> ${sum}<br>
+
     <strong>Score:</strong> ${score}<br>
+
     <strong>Percentage:</strong> ${percentage}%<br>
+
     <strong>Rating:</strong> ${stars}
+
     `;
+
 
 }
 
 
+
+
+
 document.querySelectorAll(".stat-input").forEach(input=>{
+
+
     input.addEventListener("input", calculate);
+
+
 });
 
 
+
 setupBars();
+
 calculate();
+
 
 </script>
 
