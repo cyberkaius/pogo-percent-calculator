@@ -27,19 +27,25 @@
         padding: 25px;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        text-align: center;
-        width: 420px;
+        width: 520px;
     }
 
-    h2 {
-        margin-top: 0;
+    h2, h3 {
+        text-align: center;
+        margin: 5px;
     }
 
     .stat-row {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin: 10px 0;
+        margin: 12px 0;
+    }
+
+    .stat-row label {
+        width: 70px;
+        text-align: right;
+        font-weight: bold;
     }
 
     input {
@@ -47,6 +53,7 @@
         padding: 10px;
         font-size: 18px;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .bar {
@@ -91,7 +98,8 @@
     }
 
     #result {
-        margin-top: 20px;
+        margin-top: 25px;
+        text-align: center;
         font-size: 18px;
         line-height: 1.8;
     }
@@ -107,56 +115,59 @@
 
 <div class="container">
 
-    <div class="calculator">
-        <h2>Pokemon Go</h2>
-        <h3>Percentage Calculator</h3>
+<div class="calculator">
+
+<h2>Pokemon Go</h2>
+<h3>Percentage Calculator</h3>
 
 
-        <div class="stat-row">
-            <input type="number" id="num1" min="0" max="15" value="0" oninput="calculate()" name="attack">
-            <label for="attack">Attack</label><br>
-            <div class="bar">
-                <div class="fill" id="fill1"></div>
-                <div class="line line5"></div>
-                <div class="line line10"></div>
-                <div class="bar-text" id="barText1">0 / 15</div>
-            </div>
-        </div>
+<div class="stat-row">
+    <label for="num1">Attack</label>
+    <input type="number" id="num1" min="0" max="15" value="0" oninput="calculate()">
 
-
-        <div class="stat-row">
-            <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()" name="defense">
-            <label for="defense">Defense</label><br>
-
-            <div class="bar">
-                <div class="fill" id="fill2"></div>
-                <div class="line line5"></div>
-                <div class="line line10"></div>
-                <div class="bar-text" id="barText2">0 / 15</div>
-            </div>
-        </div>
-
-
-        <div class="stat-row">
-            <input type="number" id="num3" min="0" max="15" value="0" oninput="calculate()" name="hp">
-            <label for="hp">HP</label><br>
-
-            <div class="bar">
-                <div class="fill" id="fill3"></div>
-                <div class="line line5"></div>
-                <div class="line line10"></div>
-                <div class="bar-text" id="barText3">0 / 15</div>
-            </div>
-        </div>
-
-
-        <div id="result"></div>
+    <div class="bar">
+        <div class="fill" id="fill1"></div>
+        <div class="line line5"></div>
+        <div class="line line10"></div>
+        <div class="bar-text" id="barText1">0 / 15</div>
     </div>
+</div>
 
 
-    <div class="guide">
-        <img src="stars.png" alt="Star Rating Guide">
+<div class="stat-row">
+    <label for="num2">Defense</label>
+    <input type="number" id="num2" min="0" max="15" value="0" oninput="calculate()">
+
+    <div class="bar">
+        <div class="fill" id="fill2"></div>
+        <div class="line line5"></div>
+        <div class="line line10"></div>
+        <div class="bar-text" id="barText2">0 / 15</div>
     </div>
+</div>
+
+
+<div class="stat-row">
+    <label for="num3">HP</label>
+    <input type="number" id="num3" min="0" max="15" value="0" oninput="calculate()">
+
+    <div class="bar">
+        <div class="fill" id="fill3"></div>
+        <div class="line line5"></div>
+        <div class="line line10"></div>
+        <div class="bar-text" id="barText3">0 / 15</div>
+    </div>
+</div>
+
+
+<div id="result"></div>
+
+</div>
+
+
+<div class="guide">
+    <img src="stars.png" alt="Star Rating Guide">
+</div>
 
 </div>
 
@@ -169,6 +180,7 @@ function calculate() {
         document.getElementById("num2"),
         document.getElementById("num3")
     ];
+
 
     const values = inputs.map((input, index) => {
 
@@ -214,7 +226,7 @@ function calculate() {
         stars = "⭐⭐⭐☆";
     } 
     else {
-        stars = "🌟🌟🌟🌟";
+        stars = "⭐⭐⭐⭐";
     }
 
 
@@ -227,6 +239,7 @@ function calculate() {
 }
 
 calculate();
+
 </script>
 
 </body>
