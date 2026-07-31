@@ -326,7 +326,7 @@ h3 {
 </div>
 
 <div id="result"></div>
-
+    <h1 id="result-text">0%</h1>
 </div>
 
 
@@ -447,11 +447,7 @@ function calculate(){
 
     const percentage = Math.round(raw);
 
-    document.getElementById("result").innerHTML = `
-    <h1>${percentage}%</h1>
-    `;
-
-
+    document.getElementById("result-text").textContent = `${percentage}%`;
 }
 
 
