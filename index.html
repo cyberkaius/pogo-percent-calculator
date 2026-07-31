@@ -419,9 +419,16 @@ function calculate(){
 
 
 
-        document.getElementById("fill" + (index + 1)).style.width =
+       const fill = document.getElementById("fill" + (index + 1));
 
-            (value / 15 * 100) + "%";
+        fill.style.width = (value / 15 * 100) + "%";
+        
+        
+        if (value === 15) {
+            fill.classList.add("maxed");
+        } else {
+            fill.classList.remove("maxed");
+        }
 
 
 
@@ -455,31 +462,31 @@ function calculate(){
 
     if(raw <= 48.9){
 
-        stars = "⬛";
+        stars = "⬛✩✩✩";
 
     }
 
     else if(raw <= 64.4){
 
-        stars = "⭐";
+        stars = "⭐✩✩✩";
 
     }
 
     else if(raw <= 80){
 
-        stars = "⭐⭐";
+        stars = "⭐⭐✩✩";
 
     }
 
     else if(raw <= 97.8){
 
-        stars = "⭐⭐⭐";
+        stars = "⭐⭐⭐✩";
 
     }
 
     else{
 
-        stars = "⭐⭐⭐⭐";
+        stars = "🌟🌟🌟🌟";
 
     }
 
